@@ -32,6 +32,7 @@ def getShowMoreDoc(url_id, num):
 def floorNearestTen(num):
     return int(math.floor(num / 10.0)) * 10
 
+# Change the base_url to change the campaign being targeted
 base_url = 'https://www.gofundme.com/seculartalk'
 url_id = base_url.replace('https://', '').replace('http://', '').replace('www.', '').replace('gofundme.com/', '').split('/')[0];
 print(url_id)
@@ -60,12 +61,15 @@ while cur <= (floorNearestTen(total)):
         
     cur=cur+10
 
+# Deprecated in favor of a system that prints results as they are gathered 
+'''
 for e in supporters:
     supporter = Supporter(e)
     name = supporter.getSupporterName()
     time = supporter.getSupporterTime()
     amount = supporter.getSupporterAmount()
     print(name + " donated " + amount + " " + time)
+    '''
 
 
 
