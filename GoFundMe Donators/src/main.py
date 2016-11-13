@@ -52,12 +52,13 @@ while cur <= (floorNearestTen(total)):
     local_list = nextDoc.cssselect('div .supporters-list')
     
     for x in local_list[0].cssselect('.supporter-info'):
-        supporters.append(x)
+        supporter = Supporter(x)
+        name = supporter.getSupporterName()
+        time = supporter.getSupporterTime()
+        amount = supporter.getSupporterAmount()
+        print(name + " donated " + amount + " " + time)
         
     cur=cur+10
-        
-print(len(supporters))
-print(supporters)
 
 for e in supporters:
     supporter = Supporter(e)
